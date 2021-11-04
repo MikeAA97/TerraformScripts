@@ -26,4 +26,9 @@ variable "subnet_id" {
   description = "Subnet where the EC2 Instance will be located"
 }
 
+variable "instance_profile"{
+  type = string
+  description = "Instance profile attached to this EC2 Instance"
+}
+
 
