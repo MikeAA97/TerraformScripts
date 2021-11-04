@@ -58,6 +58,15 @@ resource "aws_security_group_rule" "Instance_Egress" {
   security_group_id = aws_security_group.Instance_SG.id
 }
 
+resource "aws_security_group_rule" "Instance_Ingress" {
+  type              = "ingress"
+  from_port         = "8"
+  to_port           = "0"
+  protocol          = "ICMP"
+  cidr_blocks       = ["0.0.0.0/0"]
+  security_group_id = aws_security_group.Instance_SG.id
+}
+
 resource "aws_internet_gateway" "IGW" {
   vpc_id = aws_vpc.main.id
 
